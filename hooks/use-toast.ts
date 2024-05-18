@@ -6,7 +6,7 @@ interface IUseToastProps {
   type: 'default' | 'error' | 'success';
 }
 
-const TOAST_AVAILABLE_TIME = 1000;
+const TOAST_AVAILABLE_TIME = 2000;
 
 function useToast() {
   const dispatch = useDispatch();

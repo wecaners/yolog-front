@@ -51,6 +51,17 @@ const config: Config = {
         dialog: '0px 20px 24px -4px rgba(16, 24, 40, 0.08)',
         button: '0px 1px 2px 0px rgba(16, 24, 40, 0.05);',
       },
+      keyframes: {
+        showToast: {
+          '0%': { transform: 'translateY(-65px)', opacity: '0' },
+          '20%': { transform: 'translateY(0)', opacity: '1' },
+          '75%': { transform: 'translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateY(0)', opacity: '0' },
+        },
+      },
+      animation: {
+        showToast: 'showToast 2s ease-in-out forwards',
+      },
     },
   },
   plugins: [],
