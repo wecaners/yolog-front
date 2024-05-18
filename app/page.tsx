@@ -1,15 +1,11 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import UseDialog from '@/hooks/use-dialog';
 import { Dialog, DialogLogout } from './components';
 
 export default function Home() {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const dialogRef = useRef<HTMLDivElement>(null);
-
-  const dialogOutsideClick = (e: React.MouseEvent) => {
-    if (dialogRef.current === e.target) setIsDialogOpen(false);
-  };
+  const { setIsDialogOpen, dialogOutsideClick, dialogRef, isDialogOpen } =
+    UseDialog();
   return (
     <>
       <button
