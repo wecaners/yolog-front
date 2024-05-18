@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react';
+'use client';
+import React, { ReactNode, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 interface IDialogProps {
@@ -16,7 +17,13 @@ function Dialog({
   dialogRef,
   dialogOutsideClick,
 }: IDialogProps) {
-  if (!isOpen) return null;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!isOpen || !mounted) return null;
   return createPortal(
     <div>
       <div

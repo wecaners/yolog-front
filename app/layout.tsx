@@ -25,6 +25,7 @@ export default function RootLayout({
       <body className={`${pretendard.className}`}>
         <Providers>{children}</Providers>
         <div id="global-dialog"></div>
+        <div id="global-toast"></div>
       </body>
     </html>
   );
