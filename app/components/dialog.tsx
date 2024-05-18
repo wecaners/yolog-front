@@ -4,8 +4,10 @@ import { createPortal } from 'react-dom';
 interface IDialogProps {
   children: ReactNode;
   isOpen: boolean;
-  dialogRef: React.ForwardedRef<HTMLDivElement>;
-  dialogOutsideClick: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  dialogRef?: React.ForwardedRef<HTMLDivElement>;
+  dialogOutsideClick?: (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => void;
 }
 
 function Dialog({
