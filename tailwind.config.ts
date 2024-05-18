@@ -47,6 +47,10 @@ const config: Config = {
         primary400: '#8BA47B',
         primary500: '#506046',
       },
+      boxShadow: {
+        dialog: '0px 20px 24px -4px rgba(16, 24, 40, 0.08)',
+        button: '0px 1px 2px 0px rgba(16, 24, 40, 0.05);',
+      },
     },
   },
   plugins: [],

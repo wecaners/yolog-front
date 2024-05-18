@@ -24,6 +24,7 @@ export default function RootLayout({
     <html lang="kr" className={`${pretendard.variable}`}>
       <body className={`${pretendard.className}`}>
         <Providers>{children}</Providers>
+        <div id="global-dialog"></div>
       </body>
     </html>
   );
