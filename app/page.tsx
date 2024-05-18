@@ -1,6 +1,22 @@
 'use client';
-import { Dialog, DialogLogout, Toast } from './components';
+import useToast from '@/hooks/use-toast';
 
 export default function Home() {
-  return <Toast>테스트용 토스트 입니다.</Toast>;
+  const showToast = useToast();
+
+  return (
+    <div>
+      <button
+        className="w-200pxr h-120pxr bg-primary300"
+        onClick={() =>
+          showToast({
+            message: '성공적으로 토스트가 생성됐습니다!',
+            type: 'success',
+          })
+        }
+      >
+        토스트 테스트 버튼
+      </button>
+    </div>
+  );
 }

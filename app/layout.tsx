@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import localFont from 'next/font/local';
 import { Providers } from './lib/Providers';
+import { ToastContainer } from './components';
 
 export const metadata: Metadata = {
   title: 'yolog',
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="kr" className={`${pretendard.variable}`}>
       <body className={`${pretendard.className}`}>
-        <Providers>{children}</Providers>
+        <Providers><ToastContainer/>{children}</Providers>
         <div id="global-dialog"></div>
         <div id="global-toast"></div>
       </body>
