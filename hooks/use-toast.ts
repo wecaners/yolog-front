@@ -1,5 +1,5 @@
 import { addToast, removeToast } from '@/app/lib/redux/toast-slice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 interface IUseToastProps {
   message: string;
