@@ -50,8 +50,6 @@ function Input({
     }
   };
 
-  console.log({ valid });
-
   return (
     <div>
       <p className={getTitleClassName()}>{title}</p>
