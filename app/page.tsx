@@ -2,7 +2,6 @@
 import UseDialog from '@/hooks/use-dialog';
 import useToast from '@/hooks/use-toast';
 import { Dialog, DialogLogout } from './components';
-import { useRef } from 'react';
 
 export default function Home() {
   const showToast = useToast();

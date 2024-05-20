@@ -53,14 +53,17 @@ const config: Config = {
       },
       keyframes: {
         showToast: {
-          '0%': { transform: 'translateY(-65px)', opacity: '0' },
-          '20%': { transform: 'translateY(0)', opacity: '1' },
-          '75%': { transform: 'translateY(0)', opacity: '1' },
-          '100%': { transform: 'translateY(0)', opacity: '0' },
+          '0%': {
+            transform: 'translateX(-50%) translateY(-65px)',
+            opacity: '0',
+          },
+          '20%': { transform: 'translateX(-50%) translateY(0)', opacity: '1' },
+          '75%': { transform: 'translateX(-50%) translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateX(-50%) translateY(0)', opacity: '0' },
         },
       },
       animation: {
-        showToast: 'showToast 2s ease-in-out forwards',
+        showToast: 'showToast 2s ease-in-out',
       },
     },
   },
