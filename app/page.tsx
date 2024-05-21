@@ -1,17 +1,40 @@
-import Input from './components/input';
-import { PROFILE_NAME_VALIDATION } from './lib/constants/validation';
+'use client';
+import UseDialog from '@/hooks/use-dialog';
+import useToast from '@/hooks/use-toast';
+import { Dialog, DialogLogout } from './components';
 
 export default function Home() {
+  const showToast = useToast();
+  const { isDialogOpen, dialogOutsideClick, setIsDialogOpen, dialogRef } =
+    UseDialog();
+
   return (
-    <div className="flex justify-center items-center w-500pxr h-500pxr bg-white">
-      <Input
-        placeholder="프로필 이름을 입력해주세요."
-        registerName="profileName"
-        title="프로필 이름"
-        type="text"
-        rules={PROFILE_NAME_VALIDATION}
-        validMessage="사용할 수 있는 이름이에요."
-      />
+    <div className="flex gap-20pxr">
+      <button
+        className="w-200pxr h-120pxr bg-primary300 rounded-2xl"
+        onClick={() =>
+          showToast({
+            message: '성공적으로 토스트가 생성됐습니다!',
+            type: 'success',
+          })
+        }
+      >
+        토스트 테스트 버튼
+      </button>
+      <button
+        className="w-200pxr h-120pxr bg-primary300 rounded-2xl"
+        onClick={() => setIsDialogOpen(!isDialogOpen)}
+      >
+        모달 테스트 버튼
+      </button>
+
+      <Dialog
+        isOpen={isDialogOpen}
+        dialogOutsideClick={dialogOutsideClick}
+        dialogRef={dialogRef}
+      >
+        <DialogLogout />
+      </Dialog>
     </div>
   );
 }

@@ -51,6 +51,24 @@ const config: Config = {
         gray: '#b1b1b1',
         error: '#ff0000',
       },
+      boxShadow: {
+        dialog: '0px 20px 24px -4px rgba(16, 24, 40, 0.08)',
+        button: '0px 1px 2px 0px rgba(16, 24, 40, 0.05);',
+      },
+      keyframes: {
+        showToast: {
+          '0%': {
+            transform: 'translateX(-50%) translateY(-65px)',
+            opacity: '0',
+          },
+          '20%': { transform: 'translateX(-50%) translateY(0)', opacity: '1' },
+          '75%': { transform: 'translateX(-50%) translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateX(-50%) translateY(0)', opacity: '0' },
+        },
+      },
+      animation: {
+        showToast: 'showToast 2s ease-in-out',
+      },
     },
   },
   plugins: [],
