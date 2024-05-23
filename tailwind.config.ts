@@ -46,6 +46,10 @@ const config: Config = {
         primary300: '#AFC98D',
         primary400: '#8BA47B',
         primary500: '#506046',
+        inputGray: '#686868',
+        inputGreen: '#3E5C16',
+        gray: '#b1b1b1',
+        error: '#ff0000',
       },
       boxShadow: {
         dialog: '0px 20px 24px -4px rgba(16, 24, 40, 0.08)',
