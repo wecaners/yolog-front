@@ -55,6 +55,7 @@ const config: Config = {
       boxShadow: {
         dialog: '0px 20px 24px -4px rgba(16, 24, 40, 0.08)',
         button: '0px 1px 2px 0px rgba(16, 24, 40, 0.05);',
+        floatingButton: '0px 2px 10px rgba(0, 0, 0, 0.18)',
       },
       keyframes: {
         showToast: {
