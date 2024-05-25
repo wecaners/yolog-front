@@ -67,9 +67,31 @@ const config: Config = {
           '75%': { transform: 'translateX(-50%) translateY(0)', opacity: '1' },
           '100%': { transform: 'translateX(-50%) translateY(0)', opacity: '0' },
         },
+        showBottomSheet: {
+          '0%': {
+            transform: 'translateX(0) translateY(100%)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateX(0) translateY(0)',
+            opacity: '1',
+          },
+        },
+        closeBottomSheet: {
+          '0%': {
+            transform: 'translateX(0) translateY(0)',
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'translateX(0) translateY(100%)',
+            opacity: '0',
+          },
+        },
       },
       animation: {
         showToast: 'showToast 2s ease-in-out',
+        showBottomSheet: 'showBottomSheet 0.3s ease-in-out',
+        closeBottomSheet: 'closeBottomSheet 0.3s ease-in-out',
       },
       dropShadow: {
         textShadow: '1px 4px 4px rgba(0, 0, 0, 0.16)',

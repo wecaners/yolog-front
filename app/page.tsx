@@ -8,7 +8,7 @@ import { SigninBottom } from './components';
 
 function Home() {
   return (
-    <div className="bg-onboardingBg relative flex flex-col justify-center h-screen">
+    <div className="bg-onboardingBg relative flex flex-col justify-center h-full">
       <Image
         src={onboardingBackground}
         alt="온보딩 배경이미지"
