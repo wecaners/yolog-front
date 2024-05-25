@@ -1,5 +1,6 @@
-import { SigninBottom } from '../components';
+import { SigninBottom, SocialButton } from '../components';
 import { gowunBatang } from '../components/ui/fonts';
+import { socialButtons } from '../lib/constants/social-buttons';
 
 function SignPage() {
   return (
@@ -23,14 +24,9 @@ function SignPage() {
           </p>
         </div>
         <div>
-          <div className="flex flex-col gap-16pxr items-center">
-            {Array.from({ length: 4 }, (v, i) => (
-              <button
-                key={i}
-                className="bg-[#FFEB3B] w-358pxr h-58pxr rounded-[15px]"
-              >
-                소셜 버튼
-              </button>
+          <div className="flex flex-col gap-16pxr items-center mx-16pxr">
+            {socialButtons.map((button) => (
+              <SocialButton key={button.id} type={button.type} />
             ))}
           </div>
         </div>

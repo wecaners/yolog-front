@@ -1,16 +1,11 @@
+import { socialButtons } from '@/app/lib/constants/social-buttons';
+import { SocialButton } from '../../components';
 function SocialBottomSheet() {
   return (
-    <div>
-      <div className="flex flex-col gap-16pxr items-center mt-37pxr">
-        {Array.from({ length: 4 }, (v, i) => (
-          <button
-            key={i}
-            className="bg-[#FFEB3B] w-358pxr h-58pxr rounded-[15px]"
-          >
-            소셜 버튼
-          </button>
-        ))}
-      </div>
+    <div className="flex flex-col gap-16pxr items-center mt-37pxr mx-16pxr">
+      {socialButtons.map((button) => (
+        <SocialButton key={button.id} type={button.type} />
+      ))}
     </div>
   );
 }

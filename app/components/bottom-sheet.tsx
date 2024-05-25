@@ -2,9 +2,8 @@
 
 import usePortal from '@/hooks/use-portal';
 import { createPortal } from 'react-dom';
-import IconNavigateLeft from './icons/icon-navigate-left';
-import useBottomSheet from '@/hooks/use-bottom-sheet';
 import { useEffect, useState } from 'react';
+import { IconNavigateLeft } from '../components/index';
 
 interface Props {
   children: React.ReactNode;

@@ -1,9 +1,8 @@
 'use client';
 
-import BottomSheet from '../bottom-sheet';
 import { gowunBatang } from './fonts';
 import useBottomSheet from '@/hooks/use-bottom-sheet';
-import SocialBottomSheet from './social-bottom-sheet';
+import { BottomSheet, SocialBottomSheet } from '../../components/index';
 
 interface Props {
   className?: string;
@@ -13,9 +12,9 @@ function SigninBottom({ className }: Props) {
   const { isSheetOpen, setIsSheetOpen, handleOutsideClick, bottomSheetRef } =
     useBottomSheet();
 
-    const handleCloseSheet = () => {
-      setIsSheetOpen(false)
-    }
+  const handleCloseSheet = () => {
+    setIsSheetOpen(false);
+  };
 
   return (
     <>

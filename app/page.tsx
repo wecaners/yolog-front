@@ -4,7 +4,7 @@ import Image from 'next/image';
 import onboardingBackground from '../public/images/onboarding.avif';
 import { gowunBatang } from './components/ui/fonts';
 import Indicator from './components/ui/indicator';
-import { SigninBottom } from './components';
+import { Button, SigninBottom } from './components';
 
 function Home() {
   return (
@@ -14,7 +14,7 @@ function Home() {
         alt="온보딩 배경이미지"
         width={333}
         height={690}
-        objectFit="cover"
+        priority
         className="rotate-[-14.784deg] rounded-[20px] absolute left-108pxr top-70pxr"
       />
       <div className="bg-background w-392pxr h-387pxr absolute bottom-0pxr flex flex-col items-center">
@@ -33,10 +33,8 @@ function Home() {
           <br />
           생생하게 기록해요
         </p>
-        <button className="w-358pxr h-58pxr rounded-[15px] bg-primary300 text-white mb-22pxr">
-          다음
-        </button>
-        <SigninBottom />
+        <Button styles="bg-primary300 !w-358pxr text-white">다음</Button>
+        <SigninBottom className="mt-22pxr" />
       </div>
     </div>
   );
