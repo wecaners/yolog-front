@@ -71,6 +71,9 @@ const config: Config = {
       animation: {
         showToast: 'showToast 2s ease-in-out',
       },
+      dropShadow: {
+        textShadow: '1px 4px 4px rgba(0, 0, 0, 0.16)',
+      },
     },
   },
   plugins: [],

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import onboardingBackground from '../public/images/onboarding.avif';
 import { gowunBatang } from './components/ui/fonts';
 import Indicator from './components/ui/indicator';
+import { SigninBottom } from './components';
 
 function Home() {
   return (
@@ -35,11 +36,7 @@ function Home() {
         <button className="w-358pxr h-58pxr rounded-[15px] bg-primary300 text-white mb-22pxr">
           다음
         </button>
-        <p
-          className={`text-[#646464] ${gowunBatang.className} text-14pxr font-normal leading-[20px] underline`}
-        >
-          기존 계정으로 <span className="text-primary400">로그인</span>
-        </p>
+        <SigninBottom />
       </div>
     </div>
   );
