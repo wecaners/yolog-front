@@ -1,40 +1,48 @@
 'use client';
-import UseDialog from '@/hooks/use-dialog';
-import useToast from '@/hooks/use-toast';
-import { Dialog, DialogLogout } from './components';
 
-export default function Home() {
-  const showToast = useToast();
-  const { isDialogOpen, dialogOutsideClick, setIsDialogOpen, dialogRef } =
-    UseDialog();
+import Image from 'next/image';
+import onboardingBackground from '../public/images/onboarding.avif';
+import { gowunBatang } from './components/ui/fonts';
+import Indicator from './components/ui/indicator';
 
+function Home() {
   return (
-    <div className="flex gap-20pxr">
-      <button
-        className="w-200pxr h-120pxr bg-primary300 rounded-2xl"
-        onClick={() =>
-          showToast({
-            message: '성공적으로 토스트가 생성됐습니다!',
-            type: 'success',
-          })
-        }
-      >
-        토스트 테스트 버튼
-      </button>
-      <button
-        className="w-200pxr h-120pxr bg-primary300 rounded-2xl"
-        onClick={() => setIsDialogOpen(!isDialogOpen)}
-      >
-        모달 테스트 버튼
-      </button>
-
-      <Dialog
-        isOpen={isDialogOpen}
-        dialogOutsideClick={dialogOutsideClick}
-        dialogRef={dialogRef}
-      >
-        <DialogLogout />
-      </Dialog>
+    <div className="bg-onboardingBg relative flex flex-col justify-center h-screen">
+      <Image
+        src={onboardingBackground}
+        alt="온보딩 배경이미지"
+        width={333}
+        height={690}
+        objectFit="cover"
+        className="rotate-[-14.784deg] rounded-[20px] absolute left-108pxr top-70pxr"
+      />
+      <div className="bg-background w-392pxr h-387pxr absolute bottom-0pxr flex flex-col items-center">
+        <div className="mt-17pxr">
+          <Indicator />
+        </div>
+        <p
+          className={`text-primary500 text-15pxr font-bold ${gowunBatang.className} mt-15pxr`}
+        >
+          여록
+        </p>
+        <p
+          className={`text-[#32301C] ${gowunBatang.className} text-26pxr font-bold leading-[47px] mt-41pxr mb-60pxr`}
+        >
+          여행의 모든 순간
+          <br />
+          생생하게 기록해요
+        </p>
+        <button className="w-358pxr h-58pxr rounded-[15px] bg-primary300 text-white mb-22pxr">
+          다음
+        </button>
+        <p
+          className={`text-[#646464] ${gowunBatang.className} text-14pxr font-normal leading-[20px] underline`}
+        >
+          기존 계정으로 <span className="text-primary400">로그인</span>
+        </p>
+      </div>
     </div>
   );
 }
+
+export default Home;

@@ -22,9 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="kr" className={`${pretendard.variable}`}>
-      <body className={`${pretendard.className}`}>
-        <Providers><ToastContainer/>{children}</Providers>
+    <html
+      lang="kr"
+      className={`${pretendard.variable} flex flex-col justify-center items-center`}
+    >
+      <body className={`${pretendard.className} w-390pxr h-844pxr`}>
+        <Providers>
+          <ToastContainer />
+          {children}
+        </Providers>
         <div id="global-dialog"></div>
         <div id="global-toast"></div>
       </body>
