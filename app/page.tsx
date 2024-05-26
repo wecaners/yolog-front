@@ -27,7 +27,7 @@ function Home() {
           여록
         </p>
         <p
-          className={`text-[#32301C] ${gowunBatang.className} text-26pxr font-bold leading-[47px] mt-41pxr mb-60pxr`}
+          className={`text-[#32301C] ${gowunBatang.className} text-26pxr font-bold leading-[47px] mt-41pxr mb-60pxr text-center`}
         >
           여행의 모든 순간
           <br />
