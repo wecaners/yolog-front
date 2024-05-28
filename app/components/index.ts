@@ -9,5 +9,6 @@ export { default as FloatingButton } from './ui/floating-button';
 export { default as SocialButton } from './ui/social-button';
 export { default as SocialBottomSheet } from './ui/social-bottom-sheet';
 export { default as ToastContainer } from './toast-container';
+export { default as SignupGowunTitle } from './ui/signup-gowun-title';
 
 export * from './icon';

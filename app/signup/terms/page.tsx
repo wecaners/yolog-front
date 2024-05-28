@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Button, Checkbox } from '../../components';
-import { gowunBatang } from '../../components/ui/fonts';
+import { Button, Checkbox, SignupGowunTitle } from '../../components';
 
 type TermsName = 'underFourteen' | 'terms' | 'privacyPolicy' | 'all';
 
@@ -54,13 +53,11 @@ function SignupPage() {
   return (
     <div className="bg-background h-full flex flex-col">
       <div className="flex flex-col items-center mt-101pxr">
-        <p
-          className={`text-center ${gowunBatang.className} text-22pxr leading-[35px] tracking-[0.22px]`}
-        >
+        <SignupGowunTitle>
           서비스 이용을 위해
           <br />
           약관에 동의해주세요
-        </p>
+        </SignupGowunTitle>
       </div>
       <div className="flex flex-col justify-between flex-grow">
         <div className="flex flex-col gap-32pxr ml-45pxr">
