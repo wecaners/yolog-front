@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { SigninBottom, SocialButton } from '../components';
 import { gowunBatang } from '../components/ui/fonts';
 import { socialButtons } from '../lib/constants/social-buttons';
@@ -26,7 +27,9 @@ function SignPage() {
         <div>
           <div className="flex flex-col gap-16pxr items-center mx-16pxr">
             {socialButtons.map((button) => (
-              <SocialButton key={button.id} type={button.type} />
+              <Link href="/signup/terms" key={button.id} className="w-full">
+                <SocialButton type={button.type} />
+              </Link>
             ))}
           </div>
         </div>

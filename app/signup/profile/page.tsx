@@ -1,7 +1,6 @@
 'use client';
 
-import { SignupGowunTitle } from '@/app/components';
-import SignupProfileForm from '@/app/components/signup-profile-form';
+import { SignupGowunTitle, SignupProfileForm } from '@/app/components';
 
 function SignupProfilePage() {
   return (

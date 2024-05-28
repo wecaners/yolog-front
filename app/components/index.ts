@@ -10,5 +10,7 @@ export { default as SocialButton } from './ui/social-button';
 export { default as SocialBottomSheet } from './ui/social-bottom-sheet';
 export { default as ToastContainer } from './toast-container';
 export { default as SignupGowunTitle } from './ui/signup-gowun-title';
+export { default as SignupProfileForm } from '../components/signup-profile-form';
+export { default as SignupTermsForm } from './signup-terms-form';
 
 export * from './icon';
