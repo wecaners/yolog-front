@@ -10,8 +10,6 @@ export default function Home() {
     UseDialog();
   const { data: session } = useSession();
 
-  console.log({ session });
-
   return (
     <div className="flex gap-20pxr">
       <button
