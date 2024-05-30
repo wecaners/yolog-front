@@ -1,6 +1,8 @@
-import { useForm } from 'react-hook-form';
+'use client';
+
 import { Button, Input } from './index';
 import { PROFILE_NAME_VALIDATION } from '../lib/constants/validation';
+import { useForm } from 'react-hook-form';
 
 function SignupProfileForm() {
   const {
