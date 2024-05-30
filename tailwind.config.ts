@@ -89,11 +89,22 @@ const config: Config = {
             opacity: '0',
           },
         },
+        showSubTitle: {
+          '0%': {
+            transform: 'translateX(-50%)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateX(0)',
+            opacity: '1',
+          },
+        },
       },
       animation: {
         showToast: 'showToast 2s ease-in-out',
         showBottomSheet: 'showBottomSheet 0.3s ease-in-out',
         closeBottomSheet: 'closeBottomSheet 0.3s ease-in-out',
+        showSubTitle: 'showSubTitle 1.7s ease-in-out',
       },
       dropShadow: {
         textShadow: '1px 4px 4px rgba(0, 0, 0, 0.16)',
