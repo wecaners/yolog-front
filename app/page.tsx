@@ -17,7 +17,7 @@ function Home() {
   const routeToOnboarding = () => {
     setTimeout(() => {
       router.push('/onboarding');
-    }, 300);
+    }, 500);
   };
 
   useEffect(() => {
