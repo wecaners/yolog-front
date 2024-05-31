@@ -14,6 +14,10 @@ function Home() {
     }, 1500);
   };
 
+  useEffect(() => {
+    router.prefetch('/onboarding');
+  }, [router]);
+
   const routeToOnboarding = () => {
     setTimeout(() => {
       router.push('/onboarding');
