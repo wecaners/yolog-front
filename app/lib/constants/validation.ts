@@ -7,4 +7,8 @@ export const PROFILE_NAME_VALIDATION = {
     value: 12,
     message: '최대 12자까지 입력 가능해요.',
   },
+  required: {
+    value: true,
+    message: '',
+  },
 };
