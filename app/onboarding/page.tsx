@@ -9,14 +9,20 @@ import {
 } from '../components';
 import { SwiperClass } from 'swiper/react';
 import { useRef } from 'react';
+import { useRouter } from 'next/navigation';
 
 function OnboardingPage() {
+  const router = useRouter();
   const imageSwiperRef = useRef<SwiperClass | null>(null);
   const textSwiperRef = useRef<SwiperClass | null>(null);
 
   const handleNextSlide = () => {
-    imageSwiperRef.current?.slideNext();
-    textSwiperRef.current?.slideNext();
+    if (imageSwiperRef.current?.isEnd) {
+      router.push('/sign');
+    } else {
+      imageSwiperRef.current?.slideNext();
+      textSwiperRef.current?.slideNext();
+    }
   };
 
   return (
