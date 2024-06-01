@@ -15,6 +15,7 @@ const OnboardingTextSwiper = React.forwardRef<SwiperClass | null>(
           className="w-full mt-17pxr"
           modules={[Navigation, Pagination]}
           slidesPerView={1}
+          simulateTouch={false}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => {
             if (typeof ref === 'function') {

@@ -15,7 +15,7 @@ const OnboardingImageSwiper = React.forwardRef<SwiperClass | null>(
           className="w-full h-full"
           modules={[Navigation, Pagination]}
           slidesPerView={1}
-          onSlideChange={() => console.log('slide change')}
+          simulateTouch={false}
           onSwiper={(swiper) => {
             if (typeof ref === 'function') {
               ref(swiper);
@@ -24,12 +24,10 @@ const OnboardingImageSwiper = React.forwardRef<SwiperClass | null>(
                 swiper;
             }
           }}
-          pagination
-          navigation
         >
           {ONBOARDING_IMAGE_SLIDES.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <Image alt={slide.alt} src={slide.src} fill />
+              <Image alt={slide.alt} src={slide.src} fill draggable={false} />
             </SwiperSlide>
           ))}
         </Swiper>
