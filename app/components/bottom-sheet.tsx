@@ -44,10 +44,10 @@ function BottomSheet({
           <div
             ref={bottomSheetRef}
             onClick={onOutsideClick}
-            className="z-4 fixed bottom-0pxr left-0pxr right-0pxr top-0pxr bg-black bg-opacity-50"
+            className="z-50 fixed bottom-0pxr left-0pxr right-0pxr top-0pxr bg-black bg-opacity-50"
           />
           <div
-            className={`z-4 fixed !-translate-x-1/2 left-1/2 bottom-0pxr bg-white rounded-tl-[15px] rounded-tr-[15px] w-390pxr h-402pxr ${isOpen ? 'animate-showBottomSheet' : 'animate-closeBottomSheet'} transition-transform duration-300`}
+            className={`z-50 fixed !-translate-x-1/2 left-1/2 bottom-0pxr bg-white rounded-tl-[15px] rounded-tr-[15px] w-390pxr h-402pxr ${isOpen ? 'animate-showBottomSheet' : 'animate-closeBottomSheet'} transition-transform duration-300`}
             onAnimationEnd={handleAnimationEnd}
           >
             <div className="flex justify-center">

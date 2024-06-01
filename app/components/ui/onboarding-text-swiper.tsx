@@ -12,7 +12,7 @@ const OnboardingTextSwiper = React.forwardRef<SwiperClass | null>(
     return (
       <>
         <Swiper
-          className="w-full"
+          className="w-full mt-17pxr"
           modules={[Navigation, Pagination]}
           slidesPerView={1}
           onSlideChange={() => console.log('slide change')}
@@ -24,13 +24,20 @@ const OnboardingTextSwiper = React.forwardRef<SwiperClass | null>(
                 swiper;
             }
           }}
-          pagination={{ clickable: true }}
+          pagination={{
+            clickable: true,
+            renderBullet: (index, className) => {
+              return `<span class="${className} !w-6pxr !h-6pxr !rounded-full inline-block "></span> `;
+            },
+            bulletActiveClass: 'active-bullet',
+            bulletClass: 'default-bullet',
+          }}
           navigation
         >
           {ONBOARDING_TEXT_SLIDES.map((slide) => (
             <SwiperSlide key={slide.id}>
               <p
-                className={`text-[#32301C] ${gowunBatang.className} text-26pxr font-bold leading-[47px] mt-41pxr mb-60pxr text-center`}
+                className={`text-[#32301C] ${gowunBatang.className} text-26pxr font-bold leading-[47px] mt-84pxr mb-60pxr text-center`}
               >
                 {slide.firstLine}
                 <br />
