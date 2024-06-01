@@ -1,0 +1,53 @@
+'use client';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image';
+import { FreeMode, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+
+function OnboardingSwiper() {
+  return (
+    <>
+      <Swiper
+        className="w-full h-full"
+        modules={[Navigation, Pagination]}
+        slidesPerView={1}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+        pagination={{ clickable: true }}
+        navigation
+      >
+        <SwiperSlide>
+          <Image
+            alt="더미이미지1"
+            src="https://c4.wallpaperflare.com/wallpaper/744/428/981/aespa-k-pop-karina-yoo-ji-min-giselle-uchinaga-aeri-ningning-ning-yizhuo-hd-wallpaper-preview.jpg"
+            fill
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            alt="더미이미지2"
+            src="https://c4.wallpaperflare.com/wallpaper/540/13/204/new-jeans-korean-basketball-hd-wallpaper-preview.jpg"
+            fill
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            alt="더미이미지3"
+            src="https://www.tvtime.com/_next/image?url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fseries%2F350573%2Fbackgrounds%2F5fc90ce3aac79.jpg&w=3840&q=75"
+            fill
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            alt="더미이미지4"
+            src="https://dbkpop.com/wp-content/uploads/2023/04/ive_wave_teaser_all_group_2.jpg"
+            fill
+          />
+        </SwiperSlide>
+      </Swiper>
+    </>
+  );
+}
+
+export default OnboardingSwiper;
