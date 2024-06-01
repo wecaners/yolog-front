@@ -12,6 +12,7 @@ export { default as ToastContainer } from './toast-container';
 export { default as SignupGowunTitle } from './ui/signup-gowun-title';
 export { default as SignupProfileForm } from '../components/signup-profile-form';
 export { default as SignupTermsForm } from './signup-terms-form';
-export { default as OnboardingSwiper } from './ui/onboarding-swiper';
+export { default as OnboardingImageSwiper } from './ui/onboarding-image-swiper';
+export { default as OnboardingTextSwiper } from './ui/onboarding-text-swiper';
 
 export * from './icon';
