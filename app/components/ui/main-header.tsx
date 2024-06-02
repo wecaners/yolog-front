@@ -1,9 +1,22 @@
+'use client';
+
 import { IconMenu } from '../icon';
+import Menu from '../menu';
 import { gowunBatang } from './fonts';
+import MainMenu from './main-menu';
+import useMenu from '@/hooks/use-menu';
 
 function MainHeader() {
+  const { isMenuOpen, setIsMenuOpen } = useMenu();
+  const handleClose = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="mx-16pxr flex justify-between items-center h-65pxr">
+      <Menu isOpen={isMenuOpen} onClose={handleClose}>
+        <MainMenu />
+      </Menu>
       <div className="flex gap-28pxr">
         <button
           className={`${gowunBatang.className} text-17pxr font-bold opacity-[0.25]`}
@@ -16,7 +29,7 @@ function MainHeader() {
           빠른 메모
         </button>
       </div>
-      <button>
+      <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <IconMenu />
       </button>
     </header>
