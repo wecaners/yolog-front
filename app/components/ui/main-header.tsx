@@ -14,8 +14,8 @@ function MainHeader() {
 
   return (
     <header className="mx-16pxr flex justify-between items-center h-65pxr">
-      <Menu isOpen={isMenuOpen} onClose={handleClose}>
-        <MainMenu />
+      <Menu isOpen={isMenuOpen}>
+        <MainMenu onClose={handleClose} />
       </Menu>
       <div className="flex gap-28pxr">
         <button

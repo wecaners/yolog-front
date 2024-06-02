@@ -11,7 +11,7 @@ interface Props {
 function MainMenuHeader({ title, onClose }: Props) {
   const { isMenuOpen, setIsMenuOpen } = useMenu();
   return (
-    <div className="relative flex items-center justify-center mt-74pxr mb-44pxr">
+    <div className="relative flex items-center justify-center mt-74pxr">
       <button className="absolute left-6pxr" onClick={onClose}>
         <IconNavigateLeft />
       </button>
