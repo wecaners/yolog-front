@@ -12,5 +12,6 @@ export { default as ToastContainer } from './toast-container';
 export { default as SignupGowunTitle } from './ui/signup-gowun-title';
 export { default as SignupProfileForm } from '../components/signup-profile-form';
 export { default as SignupTermsForm } from './signup-terms-form';
+export { default as MainHeader } from './ui/main-header';
 
 export * from './icon';
