@@ -1,4 +1,4 @@
-'use-client';
+'use client';
 
 import dayjs, { Dayjs } from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
