@@ -27,7 +27,7 @@ export default function RootLayout({
       className={`${pretendard.variable} flex flex-col items-center justify-center bg-primary100`}
     >
       <body
-        className={`${pretendard.className} max-w-390pxr h-844pxr pt-54pxr pb-21pxr`}
+        className={`${pretendard.className} max-w-390pxr h-full flex flex-col justify-end`}
       >
         <Providers>
           <ToastContainer />
