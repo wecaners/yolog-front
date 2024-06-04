@@ -14,36 +14,48 @@ interface Props {
 }
 
 function MainMenu({ onClose }: Props) {
-  const [menu, setMenu] = useState('메뉴');
+  const menus = {
+    menu: '메뉴',
+    account: '계정',
+    customerService: '고객센터',
+  };
+  const [menu, setMenu] = useState(menus.menu);
   const handleClickMenu = (menu: string) => {
     setMenu(menu);
   };
+  const handleClickBack = () => {
+    if (menu !== menus.menu) {
+      setMenu(menus.menu);
+    } else {
+      onClose();
+    }
+  };
   const renderMenu = () => {
     switch (menu) {
-      case '메뉴':
+      case menus.menu:
         return (
           <>
             <MenuBarButton
-              title="계정"
+              title={menus.account}
               icon={<IconPerson />}
-              onClick={() => handleClickMenu('계정')}
+              onClick={() => handleClickMenu(menus.account)}
             />
             <MenuBarButton
-              title="고객센터"
+              title={menus.customerService}
               icon={<IconHeadPhone />}
-              onClick={() => handleClickMenu('고객센터')}
+              onClick={() => handleClickMenu(menus.customerService)}
             />
           </>
         );
-      case '계정':
+      case menus.account:
         return <AccountMenu />;
-      case '고객센터':
+      case menus.customerService:
         return <CustomerServiceMenu />;
     }
   };
   return (
     <>
-      <MainMenuHeader title={menu} onClose={onClose} />
+      <MainMenuHeader title={menu} onClick={handleClickBack} />
       <div className="mx-16pxr mt-20pxr flex-1 overflow-auto">
         {renderMenu()}
       </div>

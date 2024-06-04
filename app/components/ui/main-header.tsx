@@ -9,13 +9,13 @@ import useMenu from '@/hooks/use-menu';
 
 function MainHeader() {
   const { isMenuOpen, setIsMenuOpen } = useMenu();
-  const handleClose = () => {
-    setIsMenuOpen(false);
-  };
+
   const [tabs, setTabs] = useState('일기');
   const selectedTabStyle =
     'text-black font-bold border-b-4 border-[#506046] rounded-[2px] opacity-100';
-
+  const handleClose = () => {
+    setIsMenuOpen(false);
+  };
   return (
     <header className="items-center h-65pxr bg-[#eaf2e4]">
       <Menu isOpen={isMenuOpen}>
