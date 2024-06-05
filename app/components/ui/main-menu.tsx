@@ -8,49 +8,56 @@ import {
   MainMenuHeader,
   MenuBarButton,
 } from '../index';
+import ChangeEmailMenu from './change-email-menu';
+import MENUS from '@/app/lib/constants/menus';
 
 interface Props {
   onClose: () => void;
 }
 
 function MainMenu({ onClose }: Props) {
-  const menus = {
-    menu: '메뉴',
-    account: '계정',
-    customerService: '고객센터',
-  };
-  const [menu, setMenu] = useState(menus.menu);
-  const handleClickMenu = (menu: string) => {
-    setMenu(menu);
+  const [menu, setMenu] = useState(MENUS.menu);
+  const handleClickMenu = (menu?: string) => {
+    if (menu) {
+      setMenu(menu);
+    }
   };
   const handleClickBack = () => {
-    if (menu !== menus.menu) {
-      setMenu(menus.menu);
+    if (menu === MENUS.account) {
+      setMenu(MENUS.menu);
+    } else if (menu === MENUS.customerService) {
+      setMenu(MENUS.menu);
+    } else if (menu === MENUS.changeEmail) {
+      setMenu(MENUS.account);
+    } else if (menu === MENUS.inquiry) {
+      setMenu(MENUS.customerService);
     } else {
       onClose();
     }
   };
   const renderMenu = () => {
     switch (menu) {
-      case menus.menu:
+      case MENUS.menu:
         return (
           <>
             <MenuBarButton
-              title={menus.account}
+              title={MENUS.account}
               icon={<IconPerson />}
-              onClick={() => handleClickMenu(menus.account)}
+              onClick={() => handleClickMenu(MENUS.account)}
             />
             <MenuBarButton
-              title={menus.customerService}
+              title={MENUS.customerService}
               icon={<IconHeadPhone />}
-              onClick={() => handleClickMenu(menus.customerService)}
+              onClick={() => handleClickMenu(MENUS.customerService)}
             />
           </>
         );
-      case menus.account:
-        return <AccountMenu />;
-      case menus.customerService:
+      case MENUS.account:
+        return <AccountMenu onClick={handleClickMenu} />;
+      case MENUS.customerService:
         return <CustomerServiceMenu />;
+      case MENUS.changeEmail:
+        return <ChangeEmailMenu />;
     }
   };
   return (

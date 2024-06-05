@@ -1,9 +1,14 @@
+import MENUS from '@/app/lib/constants/menus';
 import Image from 'next/image';
 import React from 'react';
 
 type SocialType = 'google' | 'kakao' | 'naver' | 'apple';
+interface Props {
+  socialType: SocialType;
+  onClick: (menu: string) => void;
+}
 
-function AccountMenuBarButton({ socialType }: { socialType: SocialType }) {
+function AccountMenuBarButton({ socialType, onClick }: Props) {
   const getSocialInfo = () => {
     switch (socialType) {
       case 'google':
@@ -29,7 +34,7 @@ function AccountMenuBarButton({ socialType }: { socialType: SocialType }) {
     }
   };
   return (
-    <button className="flex justify-between w-full items-center border-b border-[#EAEAEA] py-25pxr pl-21pxr">
+    <div className="flex justify-between w-full items-center border-b border-[#EAEAEA] py-25pxr pl-21pxr">
       <div className="flex gap-14pxr">
         <Image
           alt="소셜로고"
@@ -41,10 +46,13 @@ function AccountMenuBarButton({ socialType }: { socialType: SocialType }) {
           {getSocialInfo().title}로 로그인 됨
         </p>
       </div>
-      <button className="w-77pxr h-29pxr rounded-lg bg-primary300 text-13pxr font-semibold">
+      <button
+        onClick={() => onClick(MENUS.changeEmail)}
+        className="w-77pxr h-29pxr rounded-lg bg-primary300 text-13pxr font-semibold"
+      >
         변경하기
       </button>
-    </button>
+    </div>
   );
 }
 
