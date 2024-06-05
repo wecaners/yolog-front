@@ -1,4 +1,5 @@
 interface Props {
+  type?: 'submit' | 'reset' | 'button';
   disabled?: boolean;
   angled?: boolean;
   size?: 'large' | 'small';
@@ -8,6 +9,7 @@ interface Props {
 }
 
 function Button({
+  type,
   disabled,
   angled,
   size = 'large',
@@ -30,6 +32,7 @@ function Button({
 
   return (
     <button
+      type={type}
       className={`${sizeStyles[size]} ${getButtonActiveStyle()} ${!angled && 'rounded-[15px]'}`}
       disabled={disabled}
       onClick={onClick}
