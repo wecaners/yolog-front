@@ -24,5 +24,6 @@ export { default as CustomerServiceMenu } from './ui/customer-service-menu';
 export { default as ToggleMessage } from './ui/toggle-message';
 export { default as OnboardingImageSwiper } from './ui/onboarding-image-swiper';
 export { default as OnboardingTextSwiper } from './ui/onboarding-text-swiper';
+export { default as DialogAccountWithDrawal } from './ui/dialog-account-withdrawal';
 
 export * from './icon';
