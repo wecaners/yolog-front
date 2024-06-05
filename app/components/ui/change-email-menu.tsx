@@ -1,3 +1,4 @@
+import UseDialog from '@/hooks/use-dialog';
 import SocialButton from './social-button';
 
 type SocialType = 'google' | 'kakao' | 'naver' | 'apple';
