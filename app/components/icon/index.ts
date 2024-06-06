@@ -7,3 +7,4 @@ export { default as IconMenu } from './icon-menu';
 export { default as IconPerson } from './icon-person';
 export { default as IconHeadPhone } from './icon-headphone';
 export { default as IconNavigateRight } from './icon-navigate-right';
+export { default as IconInquiryDone } from './icon-inquiry-done';

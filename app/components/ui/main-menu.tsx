@@ -60,7 +60,7 @@ function MainMenu({ onClose }: Props) {
       case MENUS.changeEmail:
         return <ChangeEmailMenu />;
       case MENUS.inquiry:
-        return <InquiryMenu />;
+        return <InquiryMenu onClick={handleClickMenu} />;
     }
   };
   return (

@@ -1,7 +1,21 @@
+'use client';
+
+import UseDialog from '@/hooks/use-dialog';
+import Dialog from './dialog';
 import IconCamera from './icon/icon-camera';
 import Button from './ui/button';
+import DialogInquiryDone from './ui/dialog-inquiry-done';
 
-function InquiryForm() {
+interface Props {
+  onClick: () => void;
+}
+
+function InquiryForm({ onClick }: Props) {
+  const { isDialogOpen, setIsDialogOpen, dialogOutsideClick, dialogRef } =
+    UseDialog();
+  const handleClose = () => {
+    setIsDialogOpen(false);
+  };
   const guideTextStyle =
     'text-[#7b7b7b] text-13pxr leading-[22px] tracking-[-0.4px]';
   return (
@@ -40,7 +54,17 @@ function InquiryForm() {
               <span className="pl-27pxr">에 동의하게 됩니다.</span>
             </p>
           </div>
-          <Button type="button">문의하기</Button>
+          <Button onClick={() => setIsDialogOpen(true)} type="button">
+            문의하기
+          </Button>
+          <Dialog
+            isOpen={isDialogOpen}
+            dialogOutsideClick={dialogOutsideClick}
+            dialogRef={dialogRef}
+            className="w-343pxr"
+          >
+            <DialogInquiryDone onClick={onClick} onClose={handleClose} />
+          </Dialog>
         </div>
       </div>
     </form>
