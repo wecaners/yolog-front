@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import useToast from '@/hooks/use-toast';
 
 interface Props {
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 function DialogLogout({ onClose }: Props) {
