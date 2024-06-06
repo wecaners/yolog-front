@@ -4,11 +4,12 @@ import { useState } from 'react';
 import { IconHeadPhone, IconPerson } from '../icon';
 import {
   AccountMenu,
+  ChangeEmailMenu,
   CustomerServiceMenu,
+  InquiryMenu,
   MainMenuHeader,
   MenuBarButton,
 } from '../index';
-import ChangeEmailMenu from './change-email-menu';
 import MENUS from '@/app/lib/constants/menus';
 
 interface Props {
@@ -55,17 +56,17 @@ function MainMenu({ onClose }: Props) {
       case MENUS.account:
         return <AccountMenu onClick={handleClickMenu} />;
       case MENUS.customerService:
-        return <CustomerServiceMenu />;
+        return <CustomerServiceMenu onClick={handleClickMenu} />;
       case MENUS.changeEmail:
         return <ChangeEmailMenu />;
+      case MENUS.inquiry:
+        return <InquiryMenu />;
     }
   };
   return (
     <>
       <MainMenuHeader title={menu} onClick={handleClickBack} />
-      <div className="mx-16pxr mt-20pxr flex-1 overflow-auto">
-        {renderMenu()}
-      </div>
+      <div className="mx-16pxr mt-20pxr h-full">{renderMenu()}</div>
     </>
   );
 }

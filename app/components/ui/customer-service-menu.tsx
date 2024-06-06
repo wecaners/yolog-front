@@ -1,7 +1,12 @@
+import MENUS from '@/app/lib/constants/menus';
 import Button from './button';
 import ToggleMessage from './toggle-message';
 
-function CustomerServiceMenu() {
+interface Props {
+  onClick: (menu: string) => void;
+}
+
+function CustomerServiceMenu({ onClick }: Props) {
   const titleStyle = 'text-16pxr font-semibold';
   return (
     <div className="flex flex-col justify-between h-full mt-32pxr">
@@ -63,7 +68,12 @@ function CustomerServiceMenu() {
         </div>
       </div>
       <div className="absolute bottom-37pxr left-1/2 -translate-x-1/2 px-16pxr w-full">
-        <Button styles="bg-primary300 text-white ">문의하기</Button>
+        <Button
+          styles="bg-primary300 text-white "
+          onClick={() => onClick(MENUS.inquiry)}
+        >
+          문의하기
+        </Button>
       </div>
     </div>
   );

@@ -25,5 +25,8 @@ export { default as ToggleMessage } from './ui/toggle-message';
 export { default as OnboardingImageSwiper } from './ui/onboarding-image-swiper';
 export { default as OnboardingTextSwiper } from './ui/onboarding-text-swiper';
 export { default as DialogAccountWithDrawal } from './ui/dialog-account-withdrawal';
+export { default as ChangeEmailMenu } from './ui/change-email-menu';
+export { default as InquiryMenu } from './ui/inquiry-menu';
+export { default as InquiryForm } from './inquiry-form';
 
 export * from './icon';
