@@ -24,9 +24,11 @@ export default function RootLayout({
   return (
     <html
       lang="kr"
-      className={`${pretendard.variable} flex flex-col items-center justify-center`}
+      className={`${pretendard.variable} flex flex-col items-center justify-center bg-primary100`}
     >
-      <body className={`${pretendard.className} w-390pxr h-844pxr`}>
+      <body
+        className={`${pretendard.className} max-w-390pxr max-h-844pxr flex flex-col justify-end`}
+      >
         <Providers>
           <ToastContainer />
           {children}
