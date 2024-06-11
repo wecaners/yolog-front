@@ -47,8 +47,11 @@ const config: Config = {
         primary300: '#AFC98D',
         primary400: '#8BA47B',
         primary500: '#506046',
+        onboardingBg: '#A4BF82',
         inputGray: '#686868',
         inputGreen: '#3E5C16',
+        background: '#F8F7EE',
+        mainPageBackground: '#EAF2E4',
         gray: '#b1b1b1',
         error: '#ff0000',
       },
@@ -56,6 +59,7 @@ const config: Config = {
         dialog: '0px 20px 24px -4px rgba(16, 24, 40, 0.08)',
         button: '0px 1px 2px 0px rgba(16, 24, 40, 0.05);',
         floatingButton: '0px 2px 10px rgba(0, 0, 0, 0.18)',
+        mainDiaryList: '-2px -2px 10px 0px rgba(0, 0, 0, 0.03)',
       },
       keyframes: {
         showToast: {
@@ -67,12 +71,48 @@ const config: Config = {
           '75%': { transform: 'translateX(-50%) translateY(0)', opacity: '1' },
           '100%': { transform: 'translateX(-50%) translateY(0)', opacity: '0' },
         },
+        showBottomSheet: {
+          '0%': {
+            transform: 'translateY(100%)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+            opacity: '1',
+          },
+        },
+        closeBottomSheet: {
+          '0%': {
+            transform: 'translateY(0)',
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'translateY(100%)',
+            opacity: '0',
+          },
+        },
+        showSubTitle: {
+          '0%': {
+            transform: 'translateX(-50%)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateX(0)',
+            opacity: '1',
+          },
+        },
       },
       animation: {
         showToast: 'showToast 2s ease-in-out',
+        showBottomSheet: 'showBottomSheet 0.3s ease-in-out',
+        closeBottomSheet: 'closeBottomSheet 0.3s ease-in-out',
+        showSubTitle: 'showSubTitle 1.7s ease-in-out',
+      },
+      dropShadow: {
+        textShadow: '1px 4px 4px rgba(0, 0, 0, 0.16)',
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
 };
 export default config;

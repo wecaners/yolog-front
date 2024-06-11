@@ -1,40 +1,48 @@
 'use client';
-import UseDialog from '@/hooks/use-dialog';
-import useToast from '@/hooks/use-toast';
-import { Dialog, DialogLogout } from './components';
 
-export default function Home() {
-  const showToast = useToast();
-  const { isDialogOpen, dialogOutsideClick, setIsDialogOpen, dialogRef } =
-    UseDialog();
+import { useEffect, useState } from 'react';
+import { gowunBatang } from './components/ui/fonts';
+import { useRouter } from 'next/navigation';
+
+function Home() {
+  const [isAfterTwoSeconds, setIsAfterTwoSeconds] = useState(false);
+  const router = useRouter();
+
+  const handleSubTitleAnimation = () => {
+    setTimeout(() => {
+      setIsAfterTwoSeconds(true);
+    }, 1500);
+  };
+
+  useEffect(() => {
+    router.prefetch('/onboarding');
+  }, [router]);
+
+  const routeToOnboarding = () => {
+    setTimeout(() => {
+      router.push('/onboarding');
+    }, 500);
+  };
+
+  useEffect(() => {
+    handleSubTitleAnimation();
+  }, []);
 
   return (
-    <div className="flex gap-20pxr">
-      <button
-        className="w-200pxr h-120pxr bg-primary300 rounded-2xl"
-        onClick={() =>
-          showToast({
-            message: '성공적으로 토스트가 생성됐습니다!',
-            type: 'success',
-          })
-        }
+    <div className="bg-onboardingBg relative flex flex-col justify-center h-full items-center">
+      <p
+        className={`text-white ${gowunBatang.className} text-40pxr font-bold leading-[45px]`}
       >
-        토스트 테스트 버튼
-      </button>
-      <button
-        className="w-200pxr h-120pxr bg-primary300 rounded-2xl"
-        onClick={() => setIsDialogOpen(!isDialogOpen)}
+        여록
+      </p>
+      <p
+        className={`text-white ${gowunBatang.className} text-20pxr font-bold leading-[45px] invisible ${isAfterTwoSeconds ? '!visible animate-showSubTitle' : ''}`}
+        onAnimationEnd={routeToOnboarding}
       >
-        모달 테스트 버튼
-      </button>
-
-      <Dialog
-        isOpen={isDialogOpen}
-        dialogOutsideClick={dialogOutsideClick}
-        dialogRef={dialogRef}
-      >
-        <DialogLogout />
-      </Dialog>
+        ; 여행을 기록하다
+      </p>
     </div>
   );
 }
+
+export default Home;
